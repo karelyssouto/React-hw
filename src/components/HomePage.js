@@ -13,13 +13,17 @@ class HomePage extends Component {
             }
         ],
         showAdmin: false,
-        shoppingCart: [
-        {
-
-        }
-        ]
+        sCart: []
     }
+    addToCart = (productId) => {
+        let sCart = this.state.sCart
 
+        sCart.push(productId)
+
+        this.setState({
+            sCart: sCart
+        })
+    }
     addProduct = (newItem) => {
         //CANT DO THIS IN REACT!!!!!!!!
         //this.state.productList.push();
@@ -59,19 +63,12 @@ class HomePage extends Component {
             productList: pList
         })
     }
-    addToCart = (productId) => {
-        let sCart = this.state.sCart
-        
-        sCart.push(productId)
 
-        this.setState({
-            sCart: sCart
-        })
-    }
 
 
     render() {
         return (
+        <div> 
             <div>
                 <button onClick={this.changePage}> Change Page </button>
                 
@@ -87,9 +84,9 @@ class HomePage extends Component {
                 />
                 
                 }
-
-            
-                {/* {this.state.cart.map((product,i)=>{
+            </div>
+                <div>
+                {this.state.sCart.map((product,i)=>{
                     return(
                         <CartView 
                             key={i}
@@ -99,9 +96,9 @@ class HomePage extends Component {
                             productId={i}
                         />
                     )
-                })} */}
+                })} 
             
-
+                </div>
             </div>
         );
     }
