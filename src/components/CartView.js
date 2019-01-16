@@ -7,11 +7,9 @@ class CartView extends Component {
         return (
             <div>
                 <h1>Shopping Cart</h1>
-                {/* <ProductList 
-                    productList={this.props.productList}
-                    showDelete={false}
-                    // addToCart={this.props.addToCart}
-                /> */}
+                <h1>{this.props.name}</h1>
+                <h4>{this.props.description}</h4>
+                <p>{this.props.price}</p>
             </div>
         );
     }

@@ -59,13 +59,13 @@ class HomePage extends Component {
             productList: pList
         })
     }
-    addToCart = (product) => {
-        let sCart = this.state.shoppingCart
+    addToCart = (productId) => {
+        let sCart = this.state.sCart
         
-        sCart.push.apply(product)
+        sCart.push(productId)
 
         this.setState({
-            shoppingCart: sCart
+            sCart: sCart
         })
     }
 
@@ -88,9 +88,20 @@ class HomePage extends Component {
                 
                 }
 
-                <CartView 
-                // productList={this.state.productList}
-                />
+            
+                {/* {this.state.cart.map((product,i)=>{
+                    return(
+                        <CartView 
+                            key={i}
+                            name={product.name}
+                            description={product.description}
+                            price={product.price}
+                            productId={i}
+                        />
+                    )
+                })} */}
+            
+
             </div>
         );
     }

@@ -14,7 +14,7 @@ class ProductList extends Component {
                         deleteProduct={this.props.deleteProduct}
                         productId={i}
                         showDelete ={this.props.showDelete}
-                        // addToCart={this.props.addToCart}
+                        addToCart={this.props.addToCart}
                     /> ) 
                     })}
 
